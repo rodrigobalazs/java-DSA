@@ -1,5 +1,6 @@
 package org.rbalazs;
 
+import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.Validate;
 
 /**
@@ -12,11 +13,13 @@ public class StringExample {
     /**
      * Checks whether the string given as parameter it´s a palindrome or not.
      *
-     * @param stringToCheck the string to check
+     * @param stringToCheck the string to check.
      * @return true if it´s a palindrome, false otherwise.
      */
-    public boolean isPalindrome(final String stringToCheck) {
-        Validate.notNull(stringToCheck, "stringToCheck cannot be null");
+    public static boolean isPalindrome(final String stringToCheck) {
+        if (StringUtils.isBlank(stringToCheck)) {
+            return false;
+        }
         String stringReversed = new StringBuilder(stringToCheck).reverse().toString();
         return stringToCheck.equals(stringReversed);
     }
