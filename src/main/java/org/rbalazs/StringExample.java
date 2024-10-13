@@ -1,7 +1,6 @@
 package org.rbalazs;
 
 import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.lang3.Validate;
 
 /**
  * Some examples of DSA(Data Structure and Algorithms),etc over Strings.
