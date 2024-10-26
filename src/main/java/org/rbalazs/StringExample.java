@@ -3,7 +3,7 @@ package org.rbalazs;
 import org.apache.commons.lang3.StringUtils;
 
 /**
- * Some examples of DSA(Data Structure and Algorithms),etc over Strings.
+ * Some examples of DSA(Data Structure and Algorithms) over Strings.
  *
  * @author Rodrigo Balazs
  */

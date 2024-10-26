@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Tests associated to {@link StringExample} class.
+ * StringExample Test
  *
  * @author Rodrigo Balazs
  */
