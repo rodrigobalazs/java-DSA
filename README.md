@@ -5,10 +5,12 @@ examples are unit tested via Junit.
 
 ### 🔧 Technology Stack
 
-###### Java 17
-###### Junit 5
-###### Maven
-###### Apache Commons
+```
+Java 17
+Junit 5
+Maven
+Apache Commons
+```
 
 ### ⚒️ Getting Started
 
