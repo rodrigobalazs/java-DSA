@@ -3,9 +3,6 @@ package com.rbalazs;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-/**
- * StringExample Test
- */
 public class StringExampleTest {
 
     @Test
