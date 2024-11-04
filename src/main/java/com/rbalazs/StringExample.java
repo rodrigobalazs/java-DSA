@@ -1,11 +1,9 @@
-package org.rbalazs;
+package com.rbalazs;
 
 import org.apache.commons.lang3.StringUtils;
 
 /**
  * Some examples of DSA(Data Structure and Algorithms) over Strings.
- *
- * @author Rodrigo Balazs
  */
 public class StringExample {
 

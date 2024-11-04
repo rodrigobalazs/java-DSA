@@ -1,12 +1,10 @@
-package org.rbalazs;
+package com.rbalazs;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * StringExample Test
- *
- * @author Rodrigo Balazs
  */
 public class StringExampleTest {
 
