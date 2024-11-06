@@ -8,7 +8,7 @@ import org.apache.commons.lang3.StringUtils;
 public class StringExample {
 
     /**
-     * Checks whether the string given as parameter it´s a palindrome or not.
+     * Checks whether the string given as parameter it´s a palindrome or not ( e.g "level" it´s a palindrome word ).
      *
      * @param stringToCheck the string to check.
      * @return true if it´s a palindrome, false otherwise.

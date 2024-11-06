@@ -18,6 +18,7 @@
     </developers>
 
     <properties>
+        <apache-commons-collections.version>4.1</apache-commons-collections.version>
         <apache-commons-lang.version>3.17.0</apache-commons-lang.version>
         <junit-jupiter.version>5.11.0</junit-jupiter.version>
         <maven-surefire-plugin.version>3.5.1</maven-surefire-plugin.version>
@@ -33,6 +34,12 @@
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
             <version>${apache-commons-lang.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-collections4</artifactId>
+            <version>4.4</version>
         </dependency>
 
         <!-- Junit/Testing -->
