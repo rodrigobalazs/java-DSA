@@ -1,7 +1,7 @@
 ## Java DSA (Data Structure and Algorithms)
 
-This repository contains some DSA ( Data Structure and Algorithms ) examples using Java. In addition, the provided
-examples are unit tested via Junit.
+This repository contains some DSA ( Data Structure and Algorithms ) examples using Java. <br/>
+In addition, the provided examples are unit tested via Junit.
 
 ### 🔧 Technology Stack
 

@@ -11,6 +11,27 @@ import static org.junit.jupiter.api.Assertions.*;
 public class CollectionsExampleTest {
 
     @Test
+    public void filterWordsBySubstring() {
+
+        List<String> words = Arrays.asList("root", "house", "avocado", "rest", "music", "average");
+        String substringToFilter = "av";
+        List<String> filteredWords = CollectionsExample.filterWordsBySubstring(words, substringToFilter);
+        assertEquals(Arrays.asList("average", "avocado"), filteredWords);
+    }
+
+    @Test
+    public void filterWordsBySubstring_null() {
+        List<String> filteredWords = CollectionsExample.filterWordsBySubstring(null, null);
+        assertEquals(Collections.emptyList(), filteredWords);
+    }
+
+    @Test
+    public void filterWordsBySubstring_emptyList() {
+        List<String> filteredWords = CollectionsExample.filterWordsBySubstring(Collections.emptyList(),"");
+        assertEquals(Collections.emptyList(), filteredWords);
+    }
+
+    @Test
     public void mostFrequentInteger() {
         List<Integer> integers = Arrays.asList(4, 9, 3, 2, 2, 2, 1, 5);
         int mostFrequentInteger = CollectionsExample.mostFrequentInteger(integers);

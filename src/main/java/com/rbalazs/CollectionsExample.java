@@ -1,6 +1,7 @@
 package com.rbalazs;
 
 import org.apache.commons.collections4.CollectionUtils;
+import org.apache.commons.lang3.StringUtils;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -14,10 +15,37 @@ import java.util.stream.Collectors;
 public class CollectionsExample {
 
     /**
+     * Retrieves a sorted list filtered only with the words that contains the substring given as parameter.
+     * e.g => ["root", "house", "avocado", "rest", "music", "average"] and substringToFilter = "av"
+     *        will return ["avocado", "average"]
+     *
+     * @param words the list of words
+     * @param substringToFilter the substring to filter
+     * @return a sorted list filtered with the words that contains the given substring.
+     *         If the input list is empty, an empty immutable list will be returned.
+     *         If the substringToFilter is empty, an empty immutable list will be returned.
+     */
+    public static List<String> filterWordsBySubstring(final List<String> words, final String substringToFilter) {
+
+        if(CollectionUtils.isEmpty(words)) {
+            return Collections.emptyList();
+        }
+
+        if(StringUtils.isEmpty(substringToFilter)) {
+            return Collections.emptyList();
+        }
+
+        return words.stream()
+                .filter(word -> word.contains(substringToFilter))
+                .sorted()
+                .collect(Collectors.toList());
+    }
+
+    /**
      * Retrieves the most frequent integer of a given list of integers.
      * e.g => [4, 9, 3, 2, 2, 2, 1, 5] the most frequent integer is 2
      *
-     * @param integers the list of integers e.g [4, 9, 3, 2, 2, 2, 1, 5]
+     * @param integers the list of integers
      * @return an integer which represent the most frequent number of a given list.
      *         -1 in case the input list is null or empty.
      */
@@ -57,7 +85,7 @@ public class CollectionsExample {
      * like Character, Integer, Long, etc ).
      * e.g => ['a', 'c', 'c', 'd'] the most frequent element is 'c'
      *
-     * @param elements the list of generic elements e.g ['a', 'c', 'c', 'd']
+     * @param elements the list of generic elements
      * @return a generic object/element which represent the most frequent element of a given list.
      *         Null in case the input list is null or empty.
      */
@@ -95,7 +123,7 @@ public class CollectionsExample {
      * Retrieves a list without duplicates words for the list of words given as parameter.
      * e.g => ["hello", "world", "hello", "java", "world"] will return ["hello", "world", "java"]
      *
-     * @param words the list of words e.g ["hello", "world", "hello", "java", "world"]
+     * @param words the list of words
      * @return a list without duplicates words.
      *         If the input list is empty, an empty immutable list will be returned.
      *
@@ -112,11 +140,10 @@ public class CollectionsExample {
     }
 
     /**
-     * Retrieves a list with the squared values for the list of numbers given as parameter.
-     * "square of a number n is the result of the number multiplied by itself"
+     * Retrieves a list with the squared values for the list of numbers given as parameter
      * e.g => [4,9,15,2] will return [16,81,225,4]
      *
-     * @param numbers the list of numbers e.g [4,9,15,2]
+     * @param numbers the list of numbers
      * @return a list of numbers where each element is the square of the corresponding element from the input list.
      *         If the input list is empty, an empty immutable list will be returned.
      */
