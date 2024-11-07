@@ -2,9 +2,11 @@ package com.rbalazs;
 
 import org.apache.commons.collections4.CollectionUtils;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 /**
  * Some examples of DSA(Data Structure and Algorithms) over Collections(List,Set,etc).
@@ -15,8 +17,9 @@ public class CollectionsExample {
      * Retrieves the most frequent integer of a given list of integers.
      * e.g => [4, 9, 3, 2, 2, 2, 1, 5] the most frequent integer is 2
      *
-     * @param integers list of integers
-     * @return the most frequent number of a given list, -1 in case the list is null or empty.
+     * @param integers the list of integers e.g [4, 9, 3, 2, 2, 2, 1, 5]
+     * @return an integer which represent the most frequent number of a given list.
+     *         -1 in case the input list is null or empty.
      */
     public static int mostFrequentInteger(final List<Integer> integers) {
 
@@ -54,8 +57,9 @@ public class CollectionsExample {
      * like Character, Integer, Long, etc ).
      * e.g => ['a', 'c', 'c', 'd'] the most frequent element is 'c'
      *
-     * @param elements generic list of elements
-     * @return the most frequent element, null in case the list is null or empty.
+     * @param elements the list of generic elements e.g ['a', 'c', 'c', 'd']
+     * @return a generic object/element which represent the most frequent element of a given list.
+     *         Null in case the input list is null or empty.
      */
     public static <T> T mostFrequentElement(final List<T> elements) {
 
@@ -85,5 +89,45 @@ public class CollectionsExample {
             }
         }
         return mostFrequentElement;
+    }
+
+    /**
+     * Retrieves a list without duplicates words for the list of words given as parameter.
+     * e.g => ["hello", "world", "hello", "java", "world"] will return ["hello", "world", "java"]
+     *
+     * @param words the list of words e.g ["hello", "world", "hello", "java", "world"]
+     * @return a list without duplicates words.
+     *         If the input list is empty, an empty immutable list will be returned.
+     *
+     */
+    public static List<String> removeDuplicates(final List<String> words) {
+
+        if(CollectionUtils.isEmpty(words)) {
+            return Collections.emptyList();
+        }
+
+        return words.stream()
+                .distinct()
+                .collect(Collectors.toList());
+    }
+
+    /**
+     * Retrieves a list with the squared values for the list of numbers given as parameter.
+     * "square of a number n is the result of the number multiplied by itself"
+     * e.g => [4,9,15,2] will return [16,81,225,4]
+     *
+     * @param numbers the list of numbers e.g [4,9,15,2]
+     * @return a list of numbers where each element is the square of the corresponding element from the input list.
+     *         If the input list is empty, an empty immutable list will be returned.
+     */
+    public static List<Integer> squareNumbers(final List<Integer> numbers) {
+
+        if (CollectionUtils.isEmpty(numbers)) {
+            return Collections.emptyList();
+        }
+
+        return numbers.stream()
+                .map(n -> n * n)
+                .collect(Collectors.toList());
     }
 }

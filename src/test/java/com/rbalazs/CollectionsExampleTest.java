@@ -2,7 +2,7 @@ package com.rbalazs;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.LinkedList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Arrays;
 
@@ -24,8 +24,8 @@ public class CollectionsExampleTest {
     }
 
     @Test
-    public void mostFrequentInteger_empty() {
-        int mostFrequentInteger = CollectionsExample.mostFrequentInteger(new LinkedList<>());
+    public void mostFrequentInteger_emptyList() {
+        int mostFrequentInteger = CollectionsExample.mostFrequentInteger(Collections.emptyList());
         assertEquals(-1, mostFrequentInteger);
     }
 
@@ -47,5 +47,43 @@ public class CollectionsExampleTest {
     public void mostFrequentElement_null() {
         Object mostFrequentElement = CollectionsExample.mostFrequentElement(null);
         assertEquals(null, mostFrequentElement);
+    }
+
+    @Test
+    public void removeDuplicates() {
+        List<String> words = Arrays.asList("hello", "world", "hello", "java", "world");
+        List<String> wordsWithoutDuplicates = CollectionsExample.removeDuplicates(words);
+        assertEquals(Arrays.asList("hello", "world", "java"), wordsWithoutDuplicates);
+    }
+
+    @Test
+    public void removeDuplicates_null() {
+        List<String> wordsWithoutDuplicates = CollectionsExample.removeDuplicates(null);
+        assertEquals(Collections.emptyList(), wordsWithoutDuplicates);
+    }
+
+    @Test
+    public void removeDuplicates_emptyList() {
+        List<String> wordsWithoutDuplicates = CollectionsExample.removeDuplicates(Collections.emptyList());
+        assertEquals(Collections.emptyList(), wordsWithoutDuplicates);
+    }
+
+    @Test
+    public void squareNumbers() {
+        List<Integer> numbers = Arrays.asList(4,9,15,2);
+        List<Integer> squaredNumbers = CollectionsExample.squareNumbers(numbers);
+        assertEquals(Arrays.asList(16,81,225,4), squaredNumbers);
+    }
+
+    @Test
+    public void squareNumbers_null() {
+        List<Integer> squaredNumbers = CollectionsExample.squareNumbers(null);
+        assertEquals(Collections.emptyList(), squaredNumbers);
+    }
+
+    @Test
+    public void squareNumbers_emptyList() {
+        List<Integer> squaredNumbers = CollectionsExample.squareNumbers(Collections.emptyList());
+        assertEquals(Collections.emptyList(), squaredNumbers);
     }
 }
