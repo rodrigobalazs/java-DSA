@@ -95,7 +95,7 @@ public class CollectionsExample {
             return null;
         }
 
-        // < Element, occurrenceCount >
+        // < Element, numberOfOccurrences >
         Map<T, Integer> mostFrequentElements = new HashMap<>();
         for (T element : elements) {
             Integer numberOfOccurrences = mostFrequentElements.get(element);

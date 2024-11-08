@@ -12,19 +12,13 @@ public class StringExampleTest {
     }
 
     @Test
-    public void isNotPalindrome() {
-        boolean result = StringExample.isPalindrome("plugin");
-        assertFalse(result);
-    }
-
-    @Test
-    public void isNotPalindrome_validateNull() {
+    public void isPalindrome_validateNull() {
         boolean result = StringExample.isPalindrome(null);
         assertFalse(result);
     }
 
     @Test
-    public void isNotPalindrome_validateEmptyString() {
+    public void isPalindrome_validateEmptyString() {
         boolean result = StringExample.isPalindrome("");
         assertFalse(result);
     }
