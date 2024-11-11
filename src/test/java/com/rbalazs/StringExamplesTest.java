@@ -3,23 +3,23 @@ package com.rbalazs;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-public class StringExampleTest {
+public class StringExamplesTest {
 
     @Test
     public void isPalindrome() {
-        boolean result = StringExample.isPalindrome("kayak");
+        boolean result = StringExamples.isPalindrome("kayak");
         assertTrue(result);
     }
 
     @Test
     public void isPalindrome_validateNull() {
-        boolean result = StringExample.isPalindrome(null);
+        boolean result = StringExamples.isPalindrome(null);
         assertFalse(result);
     }
 
     @Test
     public void isPalindrome_validateEmptyString() {
-        boolean result = StringExample.isPalindrome("");
+        boolean result = StringExamples.isPalindrome("");
         assertFalse(result);
     }
 }

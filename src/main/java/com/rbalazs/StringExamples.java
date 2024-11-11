@@ -5,7 +5,7 @@ import org.apache.commons.lang3.StringUtils;
 /**
  * Some examples of DSA(Data Structure and Algorithms) over Strings.
  */
-public class StringExample {
+public class StringExamples {
 
     /**
      * Checks whether the string given as parameter it´s a palindrome or not ( e.g "level" it´s a palindrome word ).
