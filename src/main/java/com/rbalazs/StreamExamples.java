@@ -38,6 +38,35 @@ public class StreamExamples {
                 .collect(Collectors.toList());
     }
 
+
+    /**
+     * Retrieves the first word in the given list that starts with the prefix given as parameter.
+     *
+     * @param words the list of words to be searched
+     * @param prefixToFind the prefix to search
+     * @return a string containing the first word that starts with the prefix.
+     *         If no word is found, an empty string will be returned.
+     *         If the input list is empty, an empty string will be returned.
+     *         If the prefixToFind is empty, an empty string will be returned.
+     */
+    public static String findFirstWordStartingWith(final List<String> words, final String prefixToFind) {
+
+        if(CollectionUtils.isEmpty(words)) {
+            return "";
+        }
+
+        if(StringUtils.isEmpty(prefixToFind)) {
+            return "";
+        }
+
+        return words.stream()
+                .filter(name -> name.startsWith(prefixToFind))
+                .findFirst()
+                .map(firstWordStartsWithPrefix -> String.format("The first word starting with the prefix:%s is:%s",
+                        prefixToFind, firstWordStartsWithPrefix))
+                .orElse(String.format("There is no word that starts with the prefix:%s", prefixToFind));
+    }
+
     /**
      * Retrieves a list without duplicates words for the list of words given as parameter.
      * e.g => ["hello", "world", "hello", "java", "world"] will return ["hello", "world", "java"]

@@ -12,7 +12,6 @@ public class StreamExamplesTest {
 
     @Test
     public void filterWordsBySubstring() {
-
         List<String> words = Arrays.asList("root", "house", "avocado", "rest", "music", "average");
         String substringToFilter = "av";
         List<String> filteredWords = StreamExamples.filterWordsBySubstring(words, substringToFilter);
@@ -29,6 +28,34 @@ public class StreamExamplesTest {
     public void filterWordsBySubstring_emptyList() {
         List<String> filteredWords = StreamExamples.filterWordsBySubstring(Collections.emptyList(),"");
         assertEquals(Collections.emptyList(), filteredWords);
+    }
+
+    @Test
+    public void findFirstWordStartingWith() {
+        List<String> words = Arrays.asList("root", "house", "avocado", "rest", "music", "average");
+        String prefixToFind = "re";
+        String result = StreamExamples.findFirstWordStartingWith(words, prefixToFind);
+        assertEquals("The first word starting with the prefix:re is:rest", result);
+    }
+
+    @Test
+    public void findFirstWordStartingWith_noResults() {
+        List<String> words = Arrays.asList("root", "house", "avocado", "rest", "music", "average");
+        String prefixToFind = "test";
+        String result = StreamExamples.findFirstWordStartingWith(words, prefixToFind);
+        assertEquals("There is no word that starts with the prefix:test", result);
+    }
+
+    @Test
+    public void findFirstWordStartingWith_null() {
+        String result = StreamExamples.findFirstWordStartingWith(null, null);
+        assertEquals("", result);
+    }
+
+    @Test
+    public void findFirstWordStartingWith_emptyList() {
+        String result = StreamExamples.findFirstWordStartingWith(Collections.emptyList(),"");
+        assertEquals("", result);
     }
     
     @Test
