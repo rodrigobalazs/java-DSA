@@ -7,6 +7,8 @@ import java.util.Map;
 
 /**
  * Some examples of DSA(Data Structure and Algorithms) over Collections(List,Set,etc).
+ *
+ * @author Rodrigo Balazs
  */
 public class CollectionExamples {
 
@@ -78,11 +80,11 @@ public class CollectionExamples {
         Integer highestNumberOfOccurrences = 0;
         T mostFrequentElement = null;
 
-        for (T number : mostFrequentElements.keySet()) {
-            Integer numberOfOccurrences = mostFrequentElements.get(number);
+        for (T element : mostFrequentElements.keySet()) {
+            Integer numberOfOccurrences = mostFrequentElements.get(element);
             if (numberOfOccurrences > highestNumberOfOccurrences) {
                 highestNumberOfOccurrences = numberOfOccurrences;
-                mostFrequentElement = number;
+                mostFrequentElement = element;
             }
         }
         return mostFrequentElement;

@@ -8,6 +8,8 @@ import java.util.stream.Collectors;
 
 /**
  * Some examples of DSA(Data Structure and Algorithms) over Collections(List,Set,etc) using Streams / Lambda Expressions.
+ *
+ * @author Rodrigo Balazs
  */
 public class StreamExamples {
 
