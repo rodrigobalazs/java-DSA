@@ -1,11 +1,7 @@
 package com.rbalazs;
 
 import org.apache.commons.lang3.StringUtils;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 /**
  * Misc examples regarding DSA (Data Structure and Algorithms)
@@ -37,9 +33,9 @@ public class MiscExamples {
     }
 
     /**
-     * Sort the string given as parameter by it´s natural order ( e.g "waf" will return "afw" )
+     * Sort the string given as parameter by it´s natural order ( e.g "waf" will return "afw" ) | Sorting implementation via Arrays.sort()
      */
-    private static String sortStringViaArrays(final String string){
+    private static String sortStringViaArrays(final String string) {
         char[] chars = string.toCharArray();
         Arrays.sort(chars);
         StringBuilder stringBuilder = new StringBuilder();
@@ -49,7 +45,10 @@ public class MiscExamples {
         return stringBuilder.toString();
     }
 
-    private static String sortStringViaCollections(final String string){
+    /**
+     * Sort the string given as parameter by it´s natural order ( e.g "waf" will return "afw" ) | Sorting implementation via Collections.sort()
+     */
+    private static String sortStringViaCollections(final String string) {
         List<Character> chars = new ArrayList<>();
         for (char c : string.toCharArray()) {
             chars.add(c);
@@ -62,4 +61,24 @@ public class MiscExamples {
         }
         return stringBuilder.toString();
     }
+
+    /**
+     * Retrieves for the 'array of integers' given as parameter and a given 'target' number, an array with the indexes
+     * of the 2 numbers which add up to target
+     *
+     * e.g: twoSum([4,1,2],6) => [0,2]
+     * implementation: brute force solution using nested-loops | complexity O(n*m)
+     */
+    public static int[] twoSum(final int[] numbers, final int target) {
+        for (int i = 0; i < numbers.length; i++) {
+            for (int j = i + 1; j < numbers.length; j++) {
+                int sum = numbers[i] + numbers[j];
+                if (sum == target) {
+                    return new int[]{i, j};
+                }
+            }
+        }
+        return null;
+    }
+
 }

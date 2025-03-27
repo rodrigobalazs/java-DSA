@@ -24,4 +24,13 @@ public class MiscExamplesTest {
     public void testAreAnagrams_notAnagrams_emptyString(){
         assertFalse(MiscExamples.areAnagrams("",""));
     }
+
+    @Test
+    public void testTwoSum(){
+        int[] numbers = {4,1,2};
+        int target = 6;
+        int[] expected = {0,2};
+        assertArrayEquals(expected, MiscExamples.twoSum(numbers, target));
+    }
+
 }
