@@ -9,13 +9,11 @@ import java.util.List;
 public class TreeExamples {
 
     /**
-     * Visits a N-ary tree ( a.k.a Generic Tree ) using DFS ( Depth-First Search) and returns the values associated to
+     * Visits a N-ary tree ( a.k.a Generic Tree ) using DFS ( Depth-First Search ) and returns the values associated to
      * the Nodes.
-     * - The N-ary tree is a particular Tree which allows to have N number of children over each particular Node
-     * - DFS (Depth-First Search ) prints the value of each Node and then recursively visits the children of that Node.
-     *   The traversal starts from the root of the Tree and goes down each branch before backtracking.
-     *
-     * @return a list with the values of the nodes in the order they were visited using DFS.
+     * - The N-ary tree is a particular Tree which allows to have N number of children over each particular Node.
+     * - DFS (Depth-First Search ) prints the value of each Node and then recursively visits the children of that Node, the
+     *   traversal procedure starts from the root of the Tree and goes down each branch before backtracking.
      */
     public static List<Integer> visitNaryTreeViaDFS(final Node root) {
 

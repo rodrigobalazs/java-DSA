@@ -67,7 +67,7 @@ public class MiscExamples {
      * of the 2 numbers which add up to target
      *
      * e.g: twoSum([4,1,2],6) => [0,2]
-     * implementation: brute force solution using nested-loops | complexity O(n*m)
+     * implementation: brute-force solution using nested-loops | complexity O(n*m)
      */
     public static int[] twoSum(final int[] numbers, final int target) {
         for (int i = 0; i < numbers.length; i++) {

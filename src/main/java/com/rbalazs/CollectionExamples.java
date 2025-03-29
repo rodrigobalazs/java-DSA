@@ -15,10 +15,6 @@ public class CollectionExamples {
     /**
      * Retrieves the most frequent integer of a given list of integers.
      * e.g => [4, 9, 3, 2, 2, 2, 1, 5] the most frequent integer is 2
-     *
-     * @param integers the list of integers
-     * @return an integer which represent the most frequent number of a given list.
-     *         -1 in case the input list is null or empty.
      */
     public static int mostFrequentInteger(final List<Integer> integers) {
 
@@ -55,10 +51,6 @@ public class CollectionExamples {
      * Retrieves the most frequent element of a given list of generic elements ( element type could be any
      * like Character, Integer, Long, etc ).
      * e.g => ['a', 'c', 'c', 'd'] the most frequent element is 'c'
-     *
-     * @param elements the list of generic elements
-     * @return a generic object/element which represent the most frequent element of a given list.
-     *         Null in case the input list is null or empty.
      */
     public static <T> T mostFrequentElement(final List<T> elements) {
 
