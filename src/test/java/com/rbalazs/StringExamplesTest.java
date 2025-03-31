@@ -22,4 +22,29 @@ public class StringExamplesTest {
         boolean result = StringExamples.isPalindrome("");
         assertFalse(result);
     }
+
+    @Test
+    public void reverseStringUsingStack(){
+        assertEquals("evif", StringExamples.reverseStringUsingStack("five"));
+    }
+
+    @Test
+    public void reverseStringUsingStack_emptyString(){
+        assertEquals("", StringExamples.reverseStringUsingStack(""));
+    }
+
+    @Test
+    public void areParenthesesBalancedUsingStack(){
+        assertTrue(StringExamples.areParenthesesBalancedUsingStack("()()"));
+    }
+
+    @Test
+    public void areParenthesesBalanced2(){
+        assertTrue(StringExamples.areParenthesesBalancedUsingStack("((()))"));
+    }
+
+    @Test
+    public void areParenthesesBalanced_notBalanced(){
+        assertFalse(StringExamples.areParenthesesBalancedUsingStack("(((())"));
+    }
 }

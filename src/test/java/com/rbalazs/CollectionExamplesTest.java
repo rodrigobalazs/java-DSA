@@ -30,22 +30,34 @@ public class CollectionExamplesTest {
     }
 
     @Test
-    public void mostFrequentElement_charType() {
+    public void mostFrequentElementViaGenerics_charType() {
         List<Character> characters = Arrays.asList('a', 'c', 'c', 'c', 'd', 'f', 'd');
-        Character mostFrequentCharacter = CollectionExamples.mostFrequentElement(characters);
+        Character mostFrequentCharacter = CollectionExamples.mostFrequentElementViaGenerics(characters);
         assertEquals('c', mostFrequentCharacter);
     }
 
     @Test
-    public void mostFrequentElement_longType() {
+    public void mostFrequentElementViaGenerics_longType() {
         List<Long> longs = Arrays.asList(4L, 311L, 5L, 5L, 1L, 1114L, 5L, 5L, 4L);
-        Long mostFrequentLong = CollectionExamples.mostFrequentElement(longs);
+        Long mostFrequentLong = CollectionExamples.mostFrequentElementViaGenerics(longs);
         assertEquals(5L, mostFrequentLong);
     }
 
     @Test
-    public void mostFrequentElement_null() {
-        Object mostFrequentElement = CollectionExamples.mostFrequentElement(null);
+    public void mostFrequentElementViaGenerics_null() {
+        Object mostFrequentElement = CollectionExamples.mostFrequentElementViaGenerics(null);
         assertEquals(null, mostFrequentElement);
+    }
+
+    @Test
+    public void arrayHasDuplicates() {
+        int[] arrayIntegers = {4,4,1,2};
+        assertTrue(CollectionExamples.arrayHasDuplicates(arrayIntegers));
+    }
+
+    @Test
+    public void arrayHasDuplicates_noDuplicates() {
+        int[] arrayIntegers = {4,1,2};
+        assertFalse(CollectionExamples.arrayHasDuplicates(arrayIntegers));
     }
 }

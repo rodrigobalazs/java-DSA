@@ -10,18 +10,18 @@ import static org.junit.jupiter.api.Assertions.*;
 public class TreeExamplesTest {
 
     @Test
-    public void testVisitNaryTreeViaDFS_null(){
+    public void visitNaryTreeViaDFS_null(){
         assertEquals(Collections.emptyList(), TreeExamples.visitNaryTreeViaDFS(null));
     }
 
     @Test
-    public void testVisitNaryTreeViaDFS_singleNode(){
+    public void visitNaryTreeViaDFS_singleNode(){
         TreeExamples.Node node1 = new TreeExamples.Node(50);
         assertEquals(List.of(50), TreeExamples.visitNaryTreeViaDFS(node1));
     }
 
     @Test
-    public void testVisitNaryTreeViaDFS(){
+    public void visitNaryTreeViaDFS(){
 
         /*
          * Tree structure used as input =>

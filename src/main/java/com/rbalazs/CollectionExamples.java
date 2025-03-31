@@ -1,9 +1,8 @@
 package com.rbalazs;
 
 import org.apache.commons.collections4.CollectionUtils;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+
+import java.util.*;
 
 /**
  * Some examples of DSA(Data Structure and Algorithms) over Collections(List,Set,etc).
@@ -52,7 +51,7 @@ public class CollectionExamples {
      * like Character, Integer, Long, etc ).
      * e.g => ['a', 'c', 'c', 'd'] the most frequent element is 'c'
      */
-    public static <T> T mostFrequentElement(final List<T> elements) {
+    public static <T> T mostFrequentElementViaGenerics(final List<T> elements) {
 
         if (CollectionUtils.isEmpty(elements)) {
             return null;
@@ -80,5 +79,17 @@ public class CollectionExamples {
             }
         }
         return mostFrequentElement;
+    }
+
+    /**
+     * Checks whether the array of integers given as parameter contains duplicates numbers or not
+     * e.g => [4,1,1,2] will return true
+     */
+    public static boolean arrayHasDuplicates(int[] array){
+        Set<Integer> set = new HashSet<>();
+        for (int i : array) {
+            set.add(i);
+        }
+        return set.size() < array.length;
     }
 }
