@@ -37,48 +37,46 @@ public class MiscExamplesTest {
 
     @Test
     public void twoSum(){
-        int[] numbers = {4,1,2};
+        int[] numbersArray = {4,1,2};
         int target = 6;
-        int[] expected = {0,2};
-        assertArrayEquals(expected, MiscExamples.twoSum(numbers, target));
+        int[] expectedArray = {0,2};
+        assertArrayEquals(expectedArray, MiscExamples.twoSum(numbersArray, target));
     }
 
     @Test
     public void retrievePositionInArray(){
-        int[] numbers = {4,1,2,50,9,3};
+        int[] numbersArray = {4,1,2,50,9,3};
         int target = 9;
         int expectedPosition = 4;
-        assertEquals(expectedPosition, MiscExamples.retrievePositionInArray(numbers, target));
+        assertEquals(expectedPosition, MiscExamples.retrievePositionInArray(numbersArray, target));
     }
 
     @Test
     public void retrievePositionInArray_targetNotFound(){
-        int[] numbers = {4,1,2,50,9,3};
+        int[] numbersArray = {4,1,2,50,9,3};
         int target = 100;
         int expectedPosition = -1;
-        assertEquals(expectedPosition, MiscExamples.retrievePositionInArray(numbers, target));
+        assertEquals(expectedPosition, MiscExamples.retrievePositionInArray(numbersArray, target));
     }
 
     @Test
     public void retrievePositionInArray_nullArray(){
-        int target = 9;
-        int expectedPosition = -1;
-        assertEquals(expectedPosition, MiscExamples.retrievePositionInArray(null, target));
+        assertEquals(-1, MiscExamples.retrievePositionInArray(null, 9));
     }
 
     @Test
     public void retrievePositionInArrayUsingBinarySearch(){
-        int[] numbers = {1,2,3,4,9,50};
+        int[] numbersArray = {1,2,3,4,9,50};
         int target = 9;
         int expectedPosition = 4;
-        assertEquals(expectedPosition, MiscExamples.retrievePositionInArrayUsingBinarySearch(numbers, target));
+        assertEquals(expectedPosition, MiscExamples.retrievePositionInArrayUsingBinarySearch(numbersArray, target));
     }
 
     @Test
     public void retrievePositionInArrayUsingBinarySearch_targetNotFound(){
-        int[] numbers = {1,2,3,4,9,50};
+        int[] numbersArray = {1,2,3,4,9,50};
         int target = 900;
         int expectedPosition = -1;
-        assertEquals(expectedPosition, MiscExamples.retrievePositionInArrayUsingBinarySearch(numbers, target));
+        assertEquals(expectedPosition, MiscExamples.retrievePositionInArrayUsingBinarySearch(numbersArray, target));
     }
 }

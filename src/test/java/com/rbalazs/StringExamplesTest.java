@@ -7,20 +7,17 @@ public class StringExamplesTest {
 
     @Test
     public void isPalindrome() {
-        boolean result = StringExamples.isPalindrome("kayak");
-        assertTrue(result);
+        assertTrue(StringExamples.isPalindrome("kayak"));
     }
 
     @Test
     public void isPalindrome_validateNull() {
-        boolean result = StringExamples.isPalindrome(null);
-        assertFalse(result);
+        assertFalse(StringExamples.isPalindrome(null));
     }
 
     @Test
     public void isPalindrome_validateEmptyString() {
-        boolean result = StringExamples.isPalindrome("");
-        assertFalse(result);
+        assertFalse(StringExamples.isPalindrome(""));
     }
 
     @Test
