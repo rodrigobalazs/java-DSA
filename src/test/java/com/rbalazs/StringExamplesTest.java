@@ -6,6 +6,36 @@ import static org.junit.jupiter.api.Assertions.*;
 public class StringExamplesTest {
 
     @Test
+    public void areAnagrams(){
+        assertTrue(StringExamples.areAnagrams("listen","silent"));
+    }
+
+    @Test
+    public void areAnagrams_notAnagrams(){
+        assertFalse(StringExamples.areAnagrams("listen","sinatnl"));
+    }
+
+    @Test
+    public void areAnagrams_notAnagrams_differentLength(){
+        assertFalse(StringExamples.areAnagrams("wooo","ow"));
+    }
+
+    @Test
+    public void areAnagrams_notAnagrams_emptyString(){
+        assertFalse(StringExamples.areAnagrams("",""));
+    }
+
+    @Test
+    public void areAnagramsUsingMaps(){
+        assertTrue(StringExamples.areAnagramsUsingMaps("listen","silent"));
+    }
+
+    @Test
+    public void areAnagramsUsingMaps_notAnagrams(){
+        assertFalse(StringExamples.areAnagramsUsingMaps("listen","sinatnl"));
+    }
+
+    @Test
     public void isPalindrome() {
         assertTrue(StringExamples.isPalindrome("kayak"));
     }
