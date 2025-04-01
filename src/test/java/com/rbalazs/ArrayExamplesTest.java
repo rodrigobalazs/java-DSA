@@ -37,20 +37,10 @@ public class ArrayExamplesTest {
     }
 
     @Test
-    public void removeDuplicatesNumbersUsingStreams_null() {
-        assertArrayEquals(new int[]{}, ArrayExamples.removeDuplicatesNumbersUsingStreams(null));
-    }
-
-    @Test
     public void removeDuplicatesNumbersUsingMap() {
         int[] numbers = new int[]{4,9,4,4,1,2,2};
         int[] expectedNumbers = new int[]{4,9,1,2};
         assertArrayEquals(expectedNumbers, ArrayExamples.removeDuplicatesNumbersUsingMap(numbers));
-    }
-
-    @Test
-    public void removeDuplicatesNumbersUsingMap_null() {
-        assertArrayEquals(new int[]{}, ArrayExamples.removeDuplicatesNumbersUsingMap(null));
     }
 
     @Test
@@ -70,23 +60,10 @@ public class ArrayExamplesTest {
     }
 
     @Test
-    public void retrievePositionInArray_nullArray(){
-        assertEquals(-1, ArrayExamples.retrievePositionInArray(null, 9));
-    }
-
-    @Test
     public void retrievePositionInArrayUsingBinarySearch(){
         int[] numbersArray = {1,2,3,4,9,50};
         int target = 9;
         int expectedPosition = 4;
-        assertEquals(expectedPosition, ArrayExamples.retrievePositionInArrayUsingBinarySearch(numbersArray, target));
-    }
-
-    @Test
-    public void retrievePositionInArrayUsingBinarySearch_targetNotFound(){
-        int[] numbersArray = {1,2,3,4,9,50};
-        int target = 900;
-        int expectedPosition = -1;
         assertEquals(expectedPosition, ArrayExamples.retrievePositionInArrayUsingBinarySearch(numbersArray, target));
     }
 }

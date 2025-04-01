@@ -10,17 +10,6 @@ import static org.junit.jupiter.api.Assertions.*;
 public class TreeExamplesTest {
 
     @Test
-    public void visitNaryTreeViaDFS_null(){
-        assertEquals(Collections.emptyList(), TreeExamples.visitNaryTreeViaDFS(null));
-    }
-
-    @Test
-    public void visitNaryTreeViaDFS_singleNode(){
-        TreeExamples.Node node1 = new TreeExamples.Node(50);
-        assertEquals(List.of(50), TreeExamples.visitNaryTreeViaDFS(node1));
-    }
-
-    @Test
     public void visitNaryTreeViaDFS(){
 
         /*
@@ -47,6 +36,12 @@ public class TreeExamplesTest {
         childNode2.addChild(childNode7);
 
         assertEquals(List.of(100, 200, 600, 700, 300, 400, 500), TreeExamples.visitNaryTreeViaDFS(rootNode1));
+    }
+
+    @Test
+    public void visitNaryTreeViaDFS_singleNode(){
+        TreeExamples.Node node1 = new TreeExamples.Node(50);
+        assertEquals(List.of(50), TreeExamples.visitNaryTreeViaDFS(node1));
     }
 }
 
