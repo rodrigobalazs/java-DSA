@@ -34,8 +34,7 @@ public class StringExamples {
     }
 
     /**
-     * Sort the string given as parameter by it´s natural order ( e.g "waf" will return "afw" ), the Sorting
-     * implementation is made via Arrays.sort()
+     * Sort the string given as parameter by it´s natural order ( e.g "waf" will return "afw" ) using Arrays.sort()
      */
     private static String sortStringViaArrays(final String string) {
         char[] chars = string.toCharArray();
@@ -48,8 +47,7 @@ public class StringExamples {
     }
 
     /**
-     * Sort the string given as parameter by it´s natural order ( e.g "waf" will return "afw" ), the Sorting
-     * implementation is made via Collections.sort()
+     * Sort the string given as parameter by it´s natural order ( e.g "waf" will return "afw" ) using Collections.sort()
      */
     private static String sortStringViaCollections(final String string) {
         List<Character> chars = new ArrayList<>();
@@ -77,26 +75,26 @@ public class StringExamples {
         }
 
         // <Character, numberOfOccurrences>
-        Map<Character, Integer> string1CharsFrequencyMap = retrieveCharsFrequencyMap(string1);
-        Map<Character, Integer> string2CharsFrequencyMap = retrieveCharsFrequencyMap(string2);
-        return string1CharsFrequencyMap.equals(string2CharsFrequencyMap);
+        Map<Character, Integer> charsNumberOcurrencesMap1 = retrieveCharsNumberOfOccurrencesMap(string1);
+        Map<Character, Integer> charsNumberOcurrencesMap2 = retrieveCharsNumberOfOccurrencesMap(string2);
+        return charsNumberOcurrencesMap1.equals(charsNumberOcurrencesMap2);
     }
 
     /**
-     * Retrieves a Map with the frequency of each character for the string given as parameter.
+     * Retrieves a Map with the number of ocurrences of each character for the string given as parameter.
      */
-    private static Map<Character, Integer> retrieveCharsFrequencyMap(final String string) {
+    private static Map<Character, Integer> retrieveCharsNumberOfOccurrencesMap(final String string) {
 
-        Map<Character, Integer> charsFrequencyMap = new HashMap<>();
+        Map<Character, Integer> charsNumberOfOcurrencesMap = new HashMap<>();
         for (char c : string.toCharArray()) {
-            if (charsFrequencyMap.get(c) == null) {
-                charsFrequencyMap.put(c, 1);
+            if (charsNumberOfOcurrencesMap.get(c) == null) {
+                charsNumberOfOcurrencesMap.put(c, 1);
             } else {
-                int charFrequency = charsFrequencyMap.get(c) + 1;
-                charsFrequencyMap.put(c, charFrequency);
+                int charNumberOcurrences = charsNumberOfOcurrencesMap.get(c) + 1;
+                charsNumberOfOcurrencesMap.put(c, charNumberOcurrences);
             }
         }
-        return charsFrequencyMap;
+        return charsNumberOfOcurrencesMap;
     }
 
     /**
@@ -111,7 +109,7 @@ public class StringExamples {
     }
 
     /**
-     * Reverse the string given as parameter ( e.g "hello" will return "olleh" ) using a Stack as Data Structure.
+     * Reverse the string given as parameter ( e.g "hello" will return "olleh" ) using a Stack.
      */
     public static String reverseStringUsingStack(final String string){
         if (StringUtils.isEmpty(string)){
@@ -131,10 +129,9 @@ public class StringExamples {
     }
 
     /**
-     * Checks whether a given string contains balanced parentheses or not using Stack as Data Structure
-     * balanced means "Every opening parenthesis ( has a corresponding closing parenthesis )"
-     *
-     * -could be also solved using a LinkedList ( O(1) for adding/removing comparing with ArrayList ) instead a Stack
+     * Checks whether a given string contains balanced parentheses or not using a Stack
+     * - balanced parentheses => Every opening parenthesis has a corresponding closing parenthesis
+     * - could be also solved using a LinkedList ( O(1) for adding/removing comparing with ArrayList ) instead a Stack
      *
      * e.g
      * "()()"   => true
@@ -155,7 +152,7 @@ public class StringExamples {
                 if (leftParenthesesStack.isEmpty()){
                     return false;
                 }
-                // found a pair of '()' therefore removes an element from the Stack
+                // found a pair of '()' therefore removes a '(' from the Stack
                 leftParenthesesStack.pop();          // leftParenthesesLinkedList.remove(leftParenthesesLinkedList.size() - 1);
             }
         }

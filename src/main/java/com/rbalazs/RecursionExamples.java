@@ -7,8 +7,7 @@ public class RecursionExamples {
      * e.g factorial(5)=120
      */
     public static int factorial(final int n){
-        // base case
-        if (n == 0){
+        if (n == 0){ // base case
             return 1;
         }
         return n * factorial(n - 1);
@@ -22,12 +21,10 @@ public class RecursionExamples {
      * F(n) = F(n−1) + F(n−2)   n≥2
      */
     public static int fibonacci(final int n) {
-        // base case
-        if (n == 0) {
+        if (n == 0) { // base case
             return 0;
         }
-        // base case
-        if (n == 1) {
+        if (n == 1) { // base case
             return 1;
         }
         return fibonacci(n-1) + fibonacci(n-2);

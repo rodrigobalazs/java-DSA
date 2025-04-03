@@ -7,7 +7,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 /**
- * Some examples of DSA(Data Structure and Algorithms) over Collections(List,Set,etc).
+ * Some examples of DSA(Data Structure and Algorithms) over Collections
  *
  * @author Rodrigo Balazs
  */
@@ -35,7 +35,7 @@ public class CollectionExamples {
     }
 
     /**
-     * Retrieves the first word in the given list of 'words' that starts with the prefix 'prefixToFind' given as parameter.
+     * Retrieves the first word of the 'list of 'words' given as parameter which starts with the prefix 'prefixToFind'.
      * e.g => ["root", "house", "avocado", "rest", "music", "average"] and prefixToFind = "re"
      *        will return "rest"
      */
@@ -58,7 +58,7 @@ public class CollectionExamples {
     }
 
     /**
-     * Retrieves the most frequent integer of a given list of integers.
+     * Retrieves the most frequent integer of a given 'list of integers'.
      * e.g => [4, 9, 3, 2, 2, 2, 1, 5] the most frequent integer is 2
      */
     public static int mostFrequentInteger(final List<Integer> integers) {
@@ -94,7 +94,7 @@ public class CollectionExamples {
 
     /**
      * Retrieves the most frequent element of a given list of generic elements ( element type could be any
-     * like Character, Integer, Long, etc ).
+     * Character, Integer, Long, etc ).
      * e.g => ['a', 'c', 'c', 'd'] the most frequent element is 'c'
      */
     public static <T> T mostFrequentElementViaGenerics(final List<T> elements) {
@@ -128,7 +128,7 @@ public class CollectionExamples {
     }
 
     /**
-     * Retrieves a list without duplicates words for the list of words given as parameter.
+     * Retrieves a list without duplicates words for the 'list of words' given as parameter.
      * e.g => ["hello", "world", "hello", "java", "world"] will return ["hello", "world", "java"]
      */
     public static List<String> removeDuplicatesUsingStreams(final List<String> words) {
@@ -143,7 +143,7 @@ public class CollectionExamples {
     }
 
     /**
-     * Retrieves a list without duplicates words for the list of words given as parameter.
+     * Retrieves a list without duplicates words for the 'list of words' given as parameter.
      * e.g => ["hello", "world", "hello", "java", "world"] will return ["hello", "world", "java"]
      * - implemented using a LinkedHashMap to maintain insertion order
      */
@@ -172,7 +172,7 @@ public class CollectionExamples {
     }
 
     /**
-     * Retrieves a list with the squared values for the list of numbers given as parameter
+     * Retrieves a list with the squared values for the 'list of numbers' given as parameter
      * e.g => [4,9,15,2] will return [16,81,225,4]
      */
     public static List<Integer> squareNumbers(final List<Integer> numbers) {

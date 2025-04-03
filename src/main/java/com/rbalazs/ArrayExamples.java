@@ -25,7 +25,8 @@ public class ArrayExamples {
     }
 
     /**
-     * Retrieves an array without duplicates numbers for the array of numbers given as parameter.
+     * Retrieves an array without duplicates numbers for the 'array of numbers' given as parameter using Streams
+     * as implementation.
      * e.g => [4,9,4,4,1,2,2] will return [4,9,1,2]
      */
     public static int[] removeDuplicatesNumbersUsingStreams(final int[] numbers) {
@@ -39,9 +40,9 @@ public class ArrayExamples {
     }
 
     /**
-     * Retrieves an array without duplicates numbers for the array of numbers given as parameter.
+     * Retrieves an array without duplicates numbers for the 'array of numbers' given as parameter using
+     * a LinkedHashMap as implementation ( maintain insertion order )
      * e.g => [4,9,4,4,1,2,2] will return [4,9,1,2]
-     * - implemented using a LinkedHashMap to maintain insertion order
      */
     public static int[] removeDuplicatesNumbersUsingMap(final int[] numbers) {
 
@@ -60,7 +61,7 @@ public class ArrayExamples {
             }
         }
 
-        // convert the map´s keys into an array structure
+        // convert the map´s keys into an array
         int[] arrayNumbersWithoutDuplicates = new int[mapMostFrequentNumbers.size()];
         int i = 0;
         for (Integer number : mapMostFrequentNumbers.keySet()) {
@@ -71,11 +72,11 @@ public class ArrayExamples {
     }
 
     /**
-     * Retrieves for the 'array of integers' given as parameter and a given 'target' number, an array with the indexes
+     * Retrieves for the 'array of numbers' given as parameter and a given 'target' number, an array with the indexes
      * of the 2 numbers which add up to target
+     * implementation: brute-force solution using nested-loops | time complexity O(n*m)
      *
      * e.g: twoSum([4,1,2],6) => [0,2]
-     * implementation: brute-force solution using nested-loops | time complexity O(n*m)
      */
     public static int[] twoSum(final int[] numbers, final int target) {
         for (int i = 0; i < numbers.length; i++) {
@@ -90,7 +91,7 @@ public class ArrayExamples {
     }
 
     /**
-     * Retrieves for the 'array of integers' given as parameter and a 'target' number, the position of 'target'
+     * Retrieves for the 'array of numbers' given as parameter and a given 'target' number, the index position of 'target'
      * into the array ( if present )
      *
      * implementation: linear search ( for loop ) | time complexity O(n)
@@ -109,9 +110,9 @@ public class ArrayExamples {
     }
 
     /**
-     * Retrieves for the 'array of integers' given as parameter and a 'target' number, the position of 'target'
+     * Retrieves for the 'array of numbers' given as parameter and a given 'target' number, the index position of 'target'
      * into the array ( if present )
-     * implementation: binary search ( 'numbers' array needs to be Ordered ) | time complexity O(log n)
+     * implementation: binary search ( 'numbers' needs to be Ordered ) | time complexity O(log n)
      *
      * e.g: retrievePositionInArrayUsingBinarySearch([1,2,4,5,9],9) => 4
      */
