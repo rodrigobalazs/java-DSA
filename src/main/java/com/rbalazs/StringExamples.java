@@ -1,7 +1,6 @@
 package com.rbalazs;
 
 import org.apache.commons.lang3.StringUtils;
-
 import java.util.*;
 
 /**
@@ -159,5 +158,48 @@ public class StringExamples {
 
         // in case the parenthesis are balanced, at this point of execution the Stack should be empty
         return leftParenthesesStack.isEmpty();
+    }
+
+    /**
+     * Retrieves a list of consecutive characters associated to the String given as parameter.
+     * e.g "aaaabbbcca" will return [('a',4),('b',3),('c',2),('a',1)]
+     */
+    public static List<ConsecutiveChar> retrievesConsecutiveChars(final String string) {
+        List<ConsecutiveChar> consecutiveChars = new ArrayList<>();
+
+        char[] chars = string.toCharArray();
+        char currentChar = chars[0];
+        int count = 1;
+
+        for (int i = 1; i < chars.length; i++) {
+            if (currentChar == chars[i]) {
+                count++;
+            } else {
+                consecutiveChars.add(new ConsecutiveChar(currentChar, count));
+                currentChar = chars[i];
+                count = 1;
+            }
+        }
+
+        consecutiveChars.add(new ConsecutiveChar(currentChar, count));
+        return consecutiveChars;
+    }
+
+    static class ConsecutiveChar {
+        char character;
+        int count;
+
+        ConsecutiveChar(final char character, final int count) {
+            this.character = character;
+            this.count = count;
+        }
+
+        public int getCharacter(){
+            return this.character;
+        }
+
+        public int getCount(){
+            return this.count;
+        }
     }
 }
