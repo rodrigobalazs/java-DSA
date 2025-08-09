@@ -16,7 +16,7 @@ public class CollectionExamples {
     /**
      * Retrieves a sorted list filtered only with the words that contains the substring 'substringToFilter' given as parameter.
      * e.g => ["root", "house", "avocado", "rest", "music", "average"] and substringToFilter = "av"
-     *        will return ["avocado", "average"]
+     *        will return ["average", "avocado"]
      */
     public static List<String> filterWordsBySubstring(final List<String> words, final String substringToFilter) {
 

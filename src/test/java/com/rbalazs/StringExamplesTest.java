@@ -20,18 +20,13 @@ public class StringExamplesTest {
     }
 
     @Test
-    public void areAnagramsUsingMaps(){
-        assertTrue(StringExamples.areAnagramsUsingMaps("listen","silent"));
-    }
-
-    @Test
     public void isPalindrome() {
         assertTrue(StringExamples.isPalindrome("kayak"));
     }
 
     @Test
-    public void reverseStringUsingStack(){
-        assertEquals("evif", StringExamples.reverseStringUsingStack("five"));
+    public void isPalindrome_stackImplementation() {
+        assertTrue(StringExamples.isPalindrome_stackImplementation("kayak"));
     }
 
     @Test

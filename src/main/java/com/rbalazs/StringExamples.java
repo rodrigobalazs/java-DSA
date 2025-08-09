@@ -19,64 +19,18 @@ public class StringExamples {
             return false;
         }
 
-        if (string1.length() != string2.length()) {
-            return false;
-        }
-
-        String sortedString1 = sortStringViaArrays(string1);
-        String sortedString2 = sortStringViaCollections(string2);
-        if (sortedString1.equals(sortedString2)) {
-            return true;
-        } else {
-            return false;
-        }
+        String orderedString1 = sortString(string1);
+        String orderedString2 = sortString(string2);
+        return orderedString1.equals(orderedString2);
     }
 
     /**
      * Sort the string given as parameter by it´s natural order ( e.g "waf" will return "afw" ) using Arrays.sort()
      */
-    private static String sortStringViaArrays(final String string) {
+    private static String sortString(final String string) {
         char[] chars = string.toCharArray();
         Arrays.sort(chars);
-        StringBuilder stringBuilder = new StringBuilder();
-        for (char c : chars) {
-            stringBuilder.append(c);
-        }
-        return stringBuilder.toString();
-    }
-
-    /**
-     * Sort the string given as parameter by it´s natural order ( e.g "waf" will return "afw" ) using Collections.sort()
-     */
-    private static String sortStringViaCollections(final String string) {
-        List<Character> chars = new ArrayList<>();
-        for (char c : string.toCharArray()) {
-            chars.add(c);
-        }
-
-        Collections.sort(chars);
-        StringBuilder stringBuilder = new StringBuilder();
-        for (char c : chars) {
-            stringBuilder.append(c);
-        }
-        return stringBuilder.toString();
-    }
-
-
-    /**
-     * Checks whether the 2 strings given as parameters are Anagrams or not ( e.g "listen" and "silent" are anagrams )
-     * using 2 Maps as Data Structure to solve it.
-     */
-    public static boolean areAnagramsUsingMaps(final String string1, final String string2) {
-
-        if (StringUtils.isEmpty(string1) || StringUtils.isEmpty(string2)) {
-            return false;
-        }
-
-        // <Character, numberOfOccurrences>
-        Map<Character, Integer> charsNumberOcurrencesMap1 = retrieveCharsNumberOfOccurrencesMap(string1);
-        Map<Character, Integer> charsNumberOcurrencesMap2 = retrieveCharsNumberOfOccurrencesMap(string2);
-        return charsNumberOcurrencesMap1.equals(charsNumberOcurrencesMap2);
+        return new String(chars);
     }
 
     /**
@@ -99,32 +53,35 @@ public class StringExamples {
     /**
      * Checks whether the string given as parameter it´s a palindrome or not ( e.g "level" it´s a palindrome word ).
      */
-    public static boolean isPalindrome(final String stringToCheck) {
-        if (StringUtils.isBlank(stringToCheck)) {
+    public static boolean isPalindrome(final String word) {
+        if (StringUtils.isEmpty(word)) {
             return false;
         }
-        String stringReversed = new StringBuilder(stringToCheck).reverse().toString();
-        return stringToCheck.equals(stringReversed);
+        String reversedWord = new StringBuilder(word).reverse().toString();
+        return word.equals(reversedWord);
     }
 
     /**
-     * Reverse the string given as parameter ( e.g "hello" will return "olleh" ) using a Stack.
+     * Checks whether the string given as parameter it´s a palindrome or not ( e.g "level" it´s a palindrome word )
+     * using a 'Stack'.
      */
-    public static String reverseStringUsingStack(final String string){
-        if (StringUtils.isEmpty(string)){
-            return "";
+    public static boolean isPalindrome_stackImplementation(final String word) {
+        if (StringUtils.isEmpty(word)) {
+            return false;
         }
 
         Stack<Character> stack = new Stack<>();
-        for (char ch: string.toCharArray()) {
-            stack.push(ch);
+        char[] chars = word.toCharArray();
+        for (char c : chars) {
+            stack.push(c);
         }
 
         StringBuilder stringBuilder = new StringBuilder();
-        while(!stack.isEmpty()){
+        while (!stack.isEmpty()) {
             stringBuilder.append(stack.pop());
         }
-        return stringBuilder.toString();
+        String reversedWord = stringBuilder.toString();
+        return word.equals(reversedWord);
     }
 
     /**

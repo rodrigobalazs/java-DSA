@@ -16,6 +16,10 @@ public class ArrayExamples {
      * e.g => [4,1,1,2] will return true
      */
     public static boolean hasDuplicates(int[] array){
+        if (ArrayUtils.isEmpty(array)){
+            return false;
+        }
+
         Set<Integer> set = new HashSet<>();
         for (int i : array) {
             set.add(i);
@@ -83,6 +87,12 @@ public class ArrayExamples {
                 int sum = numbers[i] + numbers[j];
                 if (sum == target) {
                     return new int[]{i, j};
+                    /* alternative implementation =>
+                    int[] result = new int[2];
+                    result[0] = i;
+                    result[1] = j;
+                    return result;
+                    */
                 }
             }
         }
